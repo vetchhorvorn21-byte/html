@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Cards</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#081633;
+    font-family:Arial, sans-serif;
+    padding:40px 0;
+}
+
+.container{
+    width:90%;
+    margin:auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.card{
+    width:100%;
+    max-width: 450px;
+    margin:30px auto;
+    padding:35px;
+    background:rgb(33, 12, 84);
+    border:3px solid #30496f;
+    border-radius:20px;
+    box-shadow:0 8px 20px hsla(240, 80%, 43%, 0.3);
+    transition: transform 0.3s ease,box-shadow 0.3s ease,border-color 0.3s ease;
+
+}
+.card:hover{
+
+    transform: translateY(-5px);
+    border-color:hsl(61, 91%, 60%);
+    box-shadow:0 0 30px rgba(246, 59, 246, 0.6),
+               0 0 60px rgba(246, 59, 227, 0.4),
+               0 0 120px rgba(243, 59, 246, 0.3);
+    transition: 0.5s ease;
+}
+.id-blue{
+    color:#4244cf;
+    font-size:14px;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+.id-green{
+    color: #18c58f;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.name{
+    color:#ffffff;
+    font-size:24px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.major{
+    color:#2fb8ff;
+    font-size:18px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+.major-green{
+    color:#58ffbd;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+
+}
+.description{
+    color:#b9c6d8;
+    font-size:16px;
+    line-height:1.8;
+    margin-bottom:25px;
+}
+
+.btn{
+    display:inline-block;
+    text-decoration:none;
+    padding:14px 26px;
+    border-radius:12px;
+    font-weight:bold;
+    cursor: pointer;
+    transition: all .3s ease;
+    background: #5b3df5;
+    color: #fff;
+    border: 1px solid #8b7cff;
+    box-shadow:0 0 10px rgba(91, 61, 245, 0.7),
+               0 0 20px rgba(91, 61, 245, 0.5),
+               0 0 40px rgba(91, 61, 245, 0.3);
+}
+.btn:hover{
+    transform: translateY(-3px);
+}
+.btn-blue{
+    background-color:#5638ce;
+    box-shadow:0 0 15px rgba(91, 77, 247, 0.6);
+    
+}
+.btn-blue:hover{
+    background-color: rgb(224, 123, 28);
+    box-shadow:0 0 40px rgba(210, 43, 62, 0.9);
+}
+.btn-green{
+    background-color:#449d9d;
+    box-shadow:0 0 15px rgba(24, 197, 143, 0.6);
+}
+
+.btn-green:hover{
+    background-color:rgb(205, 31, 225);
+    box-shadow:0 0 25px rgba(166, 14, 120, 0.9);
+}
+.profile-pic{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgb(44, 17, 106);
+    box-shadow:0 0 25px rgba(60, 23, 211, 0.9);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.profile-pic:hover{
+    transform: translateY(-3px);
+    border:3px solid white;
+    box-shadow:0 0 10px rgba(27, 218, 65, 0.7),
+               0 0 20px rgba(27, 218, 65, 0.5),
+               0 0 40px rgba(27, 218, 65, 0.3);
+              
+}
+.profile-card:hover {
+  transform: scale(1.05);
+  border-color: #3b82f6;
+}
+.profile-body {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+  margin-bottom: 20px;
+}
+
+.avatar-container {
+  flex-shrink: 0;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+
+    <!-- Card 1 -->
+    <div class="card">
+        <div class="id-blue">ID: BBU2026001</div>
+        <div class="profile-body">
+            <div class="avatar-container">
+                <img src="1.jpg" class="profile-pic">
+            </div>
+            <div>
+                <h2 class="name">វេត​ ឆវ័ន្ត (Vet Chhorvorn)</h2>
+
+                <h3 class="major">Information Technology</h3>
+
+                <p class="description">
+                និស្សិតជំនាញវិទ្យាសាស្រ្តកុំព្យូទ័រ​​ និងការអភិវឌ្ឍគេហទំព័រ<br>(Web Development)។</p>
+                <button class="btn btn-blue">View Profile</button>
+            </div>
+        </div>
+    </div>   
+    <!--Caed 2-->
+    <div class="card">
+        <div class="id-green">ID: BBU2026001</div>
+        <div class="profile-body">
+            <div class="avatar-container">
+                <img src="2.jpg" class="profile-pic">
+            </div>
+            <div>
+                <h2 class="name">ចាន់ ធីតា (Chan Thida)</h2>
+
+                <h3 class="major-green">Conputer Science</h3>
+
+                <p class="description">
+                <br>និស្សិតឆ្នើមលើការរចនា UI/UX Design<br> និង Frontend Engineering។</p>
+                <button class="btn btn-green">View Profile</button>
+            </div>
+        </div>
+    </div>
+           
+
+
+    </div>
+</div>
+</body>
+</html>
