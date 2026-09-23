@@ -1,523 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pizza Australia Restaurant</title>
-  <style>
-    *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  scroll-behavior:smooth;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Cards</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 body{
-  font-family:Arial,sans-serif;
-  background:#fff8f0;
+    background:#081633;
+    font-family:Arial, sans-serif;
+    padding:40px 0;
 }
 
-@keyframes fadeUp{
-  from{
-    opacity:0;
-    transform:translateY(40px);
-  }
-
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
-@keyframes pulse{
-  0%{
-    transform:scale(1);
-  }
-
-  50%{
-    transform:scale(1.05);
-  }
-
-  100%{
-    transform:scale(1);
-  }
-}
-
-/* Navbar */
-
-.navbar{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:20px 60px;
-  background:#d62828;
-  position:sticky;
-  top:0;
-  z-index:1000;
-}
-
-.logo{
-  color:white;
-  font-size:32px;
-  font-weight:bold;
-}
-
-.nav-links{
-  display:flex;
-  gap:30px;
-  list-style:none;
-}
-
-.nav-links a{
-  color:white;
-  text-decoration:none;
-  font-weight:bold;
-  transition:.3s;
-}
-
-.nav-links a:hover{
-  color:#ffd60a;
-}
-
-.contact-btn{
-  background:#ffd60a;
-  color:#222 !important;
-  padding:10px 15px;
-  border-radius:25px;
-}
-
-/* Hero */
-
-.hero{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:50px;
-  padding:80px;
-}
-
-.hero-text{
-  flex:1;
-  animation:fadeUp 1s ease;
-}
-
-.hero-text h1{
-  font-size:55px;
-  color:#d62828;
-  margin-bottom:20px;
-}
-
-.hero-text p{
-  margin-bottom:20px;
-  line-height:1.8;
-}
-
-.hero-image{
-  flex:1;
-}
-
-.hero-image img{
-  width:100%;
-  border-radius:20px;
-}
-
-.btn{
-  display:inline-block;
-  background:#f77f00;
-  padding:15px 30px;
-  color:white;
-  text-decoration:none;
-  border-radius:10px;
-  animation:pulse 2s infinite;
-}
-
-/* Menu */
-
-.menu{
-  padding:80px;
-  text-align:center;
-}
-
-.menu h2{
-  color:#d62828;
-  margin-bottom:20px;
-}
-
-.filter-buttons{
-  margin-bottom:30px;
-}
-
-.filter-buttons button{
-  border:none;
-  background:#d62828;
-  color:white;
-  padding:12px 20px;
-  margin:5px;
-  border-radius:8px;
-  cursor:pointer;
-}
-
-.filter-buttons button.active{
-  background:#f77f00;
-}
-
-.cards{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:25px;
+.container{
+    width:90%;
+    margin:auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
 
 .card{
-  width:280px;
-  background:white;
-  border-radius:15px;
-  overflow:hidden;
-  box-shadow:0 4px 10px rgba(0,0,0,.1);
-  transition:.4s;
-}
+    width:100%;
+    max-width: 450px;
+    margin:30px auto;
+    padding:35px;
+    background:rgb(33, 12, 84);
+    border:3px solid #30496f;
+    border-radius:20px;
+    box-shadow:0 8px 20px hsla(240, 80%, 43%, 0.3);
+    transition: transform 0.3s ease,box-shadow 0.3s ease,border-color 0.3s ease;
 
+}
 .card:hover{
-  transform:translateY(-10px) scale(1.03);
+
+    transform: translateY(-5px);
+    border-color:hsl(61, 91%, 60%);
+    box-shadow:0 0 30px rgba(246, 59, 246, 0.6),
+               0 0 60px rgba(246, 59, 227, 0.4),
+               0 0 120px rgba(243, 59, 246, 0.3);
+    transition: 0.5s ease;
+}
+.id-blue{
+    color:#4244cf;
+    font-size:14px;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+.id-green{
+    color: #18c58f;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.name{
+    color:#ffffff;
+    font-size:24px;
+    font-weight:bold;
+    margin-bottom:20px;
 }
 
-.card img{
-  width:100%;
-  height:200px;
-  object-fit:cover;
+.major{
+    color:#2fb8ff;
+    font-size:18px;
+    font-weight:bold;
+    margin-bottom:20px;
 }
-
-.card h3{
-  margin:15px 0;
-}
-
-.card p{
-  margin-bottom:20px;
-  color:#d62828;
-  font-weight:bold;
-}
-
-/* Order */
-
-.order{
-  padding:80px;
-  background:white;
-  text-align:center;
-}
-
-.order h2{
-  color:#d62828;
-  margin-bottom:20px;
-}
-
-#orderForm{
-  max-width:500px;
-  margin:auto;
-  display:flex;
-  flex-direction:column;
-  gap:15px;
-}
-
-#orderForm input,
-#orderForm select{
-  padding:12px;
-  border:1px solid #ccc;
-  border-radius:8px;
-}
-
-#orderForm button{
-  padding:15px;
-  background:#d62828;
-  color:white;
-  border:none;
-  border-radius:8px;
-  cursor:pointer;
-}
-
-#message{
-  margin-top:15px;
-  font-weight:bold;
-}
-
-/* About */
-
-.about{
-  padding:80px;
-  text-align:center;
-  background:#ffe5d9;
-}
-
-/* Contact */
-
-.contact{
-  padding:80px;
-  text-align:center;
-}
-
-/* Footer */
-
-footer{
-  background:#d62828;
-  color:white;
-  text-align:center;
-  padding:20px;
-}
-
-/* Responsive */
-
-@media(max-width:768px){
-
-.hero{
-  flex-direction:column;
-  text-align:center;
-}
-
-.navbar{
-  flex-direction:column;
-}
-
-.nav-links{
-  flex-wrap:wrap;
-  justify-content:center;
-}
-
-.hero-text h1{
-  font-size:38px;
-}
+.major-green{
+    color:#58ffbd;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
 
 }
-  </style>
+.description{
+    color:#b9c6d8;
+    font-size:16px;
+    line-height:1.8;
+    margin-bottom:25px;
+}
+
+.btn{
+    display:inline-block;
+    text-decoration:none;
+    padding:14px 26px;
+    border-radius:12px;
+    font-weight:bold;
+    cursor: pointer;
+    transition: all .3s ease;
+    background: #5b3df5;
+    color: #fff;
+    border: 1px solid #8b7cff;
+    box-shadow:0 0 10px rgba(91, 61, 245, 0.7),
+               0 0 20px rgba(91, 61, 245, 0.5),
+               0 0 40px rgba(91, 61, 245, 0.3);
+}
+.btn:hover{
+    transform: translateY(-3px);
+}
+.btn-blue{
+    background-color:#5638ce;
+    box-shadow:0 0 15px rgba(91, 77, 247, 0.6);
+    
+}
+.btn-blue:hover{
+    background-color: rgb(224, 123, 28);
+    box-shadow:0 0 40px rgba(210, 43, 62, 0.9);
+}
+.btn-green{
+    background-color:#449d9d;
+    box-shadow:0 0 15px rgba(24, 197, 143, 0.6);
+}
+
+.btn-green:hover{
+    background-color:rgb(205, 31, 225);
+    box-shadow:0 0 25px rgba(166, 14, 120, 0.9);
+}
+.profile-pic{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgb(44, 17, 106);
+    box-shadow:0 0 25px rgba(60, 23, 211, 0.9);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.profile-pic:hover{
+    transform: translateY(-3px);
+    border:3px solid white;
+    box-shadow:0 0 10px rgba(27, 218, 65, 0.7),
+               0 0 20px rgba(27, 218, 65, 0.5),
+               0 0 40px rgba(27, 218, 65, 0.3);
+              
+}
+.profile-card:hover {
+  transform: scale(1.05);
+  border-color: #3b82f6;
+}
+.profile-body {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+  margin-bottom: 20px;
+}
+
+.avatar-container {
+  flex-shrink: 0;
+}
+</style>
 </head>
 <body>
 
-  <!-- Navbar -->
-<nav class="navbar">
-  <div class="logo">🍕 Pizza Australia</div>
-      <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#menu">Menu</a></li>
-      <li><a href="#order">Order</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
+<div class="container">
 
-  <!-- Hero -->
-<section class="hero" id="home">
-    <div class="hero-text">
-        <h1>Delicious Food & Drinks For Everyone</h1>
 
-        <p>
-            Enjoy our Pizza, Burgers, Sandwiches and Refreshing
-            Drinks made fresh every day.
+    <!-- Card 1 -->
+    <div class="card">
+        <div class="id-blue">ID: BBU2026001</div>
+        <div class="profile-body">
+            <div class="avatar-container">
+                <img src="1.jpg" class="profile-pic">
+            </div>
+            <div>
+                <h2 class="name">វេត​ ឆវ័ន្ត (Vet Chhorvorn)</h2>
+
+                <h3 class="major">Information Technology</h3>
+
+                <p class="description">
+                និស្សិតជំនាញវិទ្យាសាស្រ្តកុំព្យូទ័រ​​ និងការអភិវឌ្ឍគេហទំព័រ<br>(Web Development)។</p>
+                <button class="btn btn-blue">View Profile</button>
+            </div>
+        </div>
+    </div>   
+    <!--Caed 2-->
+    <div class="card">
+        <div class="id-green">ID: BBU2026001</div>
+        <div class="profile-body">
+            <div class="avatar-container">
+                <img src="2.jpg" class="profile-pic">
+            </div>
+            <div>
+                <h2 class="name">ចាន់ ធីតា (Chan Thida)</h2>
+
+                <h3 class="major-green">Conputer Science</h3>
+
+                <p class="description">
+                <br>និស្សិតឆ្នើមលើការរចនា UI/UX Design<br> និង Frontend Engineering។</p>
+                <button class="btn btn-green">View Profile</button>
+            </div>
+        </div>
     </div>
+           
 
-    <div class="hero-image">
-        <img src="1.jpg" alt="Pizza Restaurant">
-    </div>
-</section>
-
-  <!-- Menu -->
-  <section class="menu" id="menu">
-
-    <h2>Our Menu</h2>
-
-    <div class="filter-buttons">
-      <button class="active" onclick="filterMenu('all',this)">All</button>
-      <button onclick="filterMenu('pizza',this)">Pizza</button>
-      <button onclick="filterMenu('burger',this)">Burger</button>
-      <button onclick="filterMenu('sandwich',this)">Sandwich</button>
-      <button onclick="filterMenu('drink',this)">Beverages</button>
-    </div>
-
-    <div class="cards">
-
-      <div class="card pizza">
-        <img src="peperroni.jpg">
-        <h3>Pepperoni Pizza</h3>
-        <p>$12.99</p>
-      </div>
-
-      <div class="card pizza">
-        <img src="chees p.jpg">
-        <h3>Cheese Pizza</h3>
-        <p>$10.99</p>
-      </div>
-
-      <div class="card burger">
-        <img src="beef bur.jpg">
-        <h3>Beef Burger</h3>
-        <p>$8.99</p>
-      </div>
-
-      <div class="card burger">
-        <img src="chicken bur.jpg">
-        <h3>Chicken Burger</h3>
-        <p>$7.99</p>
-      </div>
-
-      <div class="card sandwich">
-        <img src="cheese sand.jpg">
-        <h3>Cheese Sandwich</h3>
-        <p>$6.99</p>
-      </div>
-
-      <div class="card sandwich">
-        <img src="ham sand.jpg">
-        <h3>Ham Sandwich</h3>
-        <p>$5.99</p>
-      </div>
-
-      <div class="card drink">
-        <img src="coffee.jpg" >
-        <h3>Iced Coffee</h3>
-        <p>$3.99</p>
-      </div>
-
-      <div class="card drink">
-        <img src="orange.jpg">
-        <h3>Orange Juice</h3>
-        <p>$4.99</p>
-      </div>
 
     </div>
-
-  </section>
-
-  <!-- Order -->
-
-  <section class="order" id="order">
-
-    <h2>Order Your Food 🍽️</h2>
-
-    <form id="orderForm">
-
-      <input type="text" id="name" placeholder="Your Name">
-
-      <input type="tel" id="phone" placeholder="Phone Number">
-
-      <select id="food">
-        <option value="">Select Menu</option>
-        <option>Pepperoni Pizza</option>
-        <option>Cheese Pizza</option>
-        <option>Beef Burger</option>
-        <option>Chicken Burger</option>
-        <option>Cheese Sandwich</option>
-        <option>Ham Sandwich</option>
-        <option>Iced Coffee</option>
-        <option>Orange Juice</option>
-      </select>
-
-      <input type="number" id="quantity" placeholder="Quantity">
-
-      <button type="submit">Place Order</button>
-
-    </form>
-
-    <p id="message"></p>
-
-  </section>
-
-  <!-- About -->
-
-  <section class="about" id="about">
-    <h2>About Us</h2>
-
-    <p>
-      Pizza Australia Restaurant offers delicious food,
-      fresh beverages and excellent service in a comfortable
-      environment for families and friends.
-    </p>
-  </section>
-
-  <!-- Contact -->
-
-  <section class="contact" id="contact">
-
-    <h2>Contact Us</h2>
-
-    <p>📍 Phnom Penh, Cambodia</p>
-    <p>📞 +855 12 345 678</p>
-    <p>📧 pizzaaustralia@gmail.com</p>
-
-  </section>
-
-  <footer>
-    <p>© 2026 Pizza Australia Restaurant | All Rights Reserved</p>
-  </footer>
-
-<script>
-function filterMenu(category, button){
-
-    const cards = document.querySelectorAll(".card");
-    const buttons = document.querySelectorAll(".filter-buttons button");
-
-    buttons.forEach(btn => {
-        btn.classList.remove("active");
-    });
-
-    button.classList.add("active");
-
-    cards.forEach(card => {
-
-        if(category === "all"){
-            card.style.display = "block";
-        }
-        else if(card.classList.contains(category)){
-            card.style.display = "block";
-        }
-        else{
-            card.style.display = "none";
-        }
-
-    });
-}
-
-document.getElementById("orderForm").addEventListener("submit", function(e){
-
-    e.preventDefault();
-
-    let name = document.getElementById("name").value.trim();
-    let phone = document.getElementById("phone").value.trim();
-    let food = document.getElementById("food").value;
-    let quantity = document.getElementById("quantity").value;
-    let message = document.getElementById("message");
-
-    if(name === ""){
-        message.style.color = "red";
-        message.textContent = "Please enter your name";
-        return;
-    }
-
-    if(phone.length < 8){
-        message.style.color = "red";
-        message.textContent = "Please enter a valid phone number";
-        return;
-    }
-
-    if(food === ""){
-        message.style.color = "red";
-        message.textContent = "Please select a menu item";
-        return;
-    }
-
-    if(quantity === "" || quantity <= 0){
-        message.style.color = "red";
-        message.textContent = "Please enter a valid quantity";
-        return;
-    }
-
-    message.style.color = "green";
-    message.textContent =
-    "✅ Order Successful! Thank you " +
-    name +
-    " for ordering " +
-    quantity +
-    " x " +
-    food;
-
-    this.reset();
-});
-</script>
+</div>
 </body>
 </html>
